@@ -20,19 +20,20 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="juguetes/">Juguetes <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/juguetes/">Juguetes <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="sucursales/">Sucursales</a>
+        <a class="nav-link" href="/sucursales/">Sucursales</a>
       </li>
         <li class="nav-item">
-        <a class="nav-link" href="quienes_somos/">Quiénes Somos</a>
+        <a class="nav-link" href="/quienes_somos/">Quiénes Somos</a>
         <li class="nav-item">
-        <a class="nav-link" href="#">Contacto</a>
+        <a class="nav-link" href="/contacto/">Contacto</a>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Buscar en Vintage" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+
+    <form class="form-inline my-2 my-lg-0" action = "/buscar_juguetes/" method = "GET">
+      <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search" name = 'search'>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </nav>
@@ -99,16 +100,16 @@
             Secciones
           </h6>
           <p>
-            <a href="#!" class="text-reset">Index</a>
+            <a href="/" class="text-reset">Index</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Juguetes</a>
+            <a href="/juguetes/" class="text-reset">Juguetes</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Sucursales</a>
+            <a href="/sucursales/" class="text-reset">Sucursales</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Quiénes Somos</a>
+            <a href="/quienes_somos/" class="text-reset">Quiénes Somos</a>
           </p>
         </div>
         <!-- Grid column -->
@@ -119,7 +120,7 @@
           <h6 class="text-uppercase fw-bold mb-4">
             Contacto
           </h6>
-          <p><i class="fas fa-home me-3"></i> Ciudad Falsa, Calle Falsa 3456 US</p>
+          <p><i class="fas fa-home me-3"></i> Calle Falsa 3456, Ciudad Falsa</p>
           <p>
             <i class="fas fa-envelope me-3"></i>
             info@mail.com
@@ -136,7 +137,7 @@
 
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2022 Copyright
+    © 2022 Copyright Vintage Juguetes
 
   </div>
   <!-- Copyright -->

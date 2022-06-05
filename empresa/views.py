@@ -13,3 +13,11 @@ def listar_empleados(request):
     lista_empleados = Empleados.objects.all()
     context = {'lista_empleados':lista_empleados}
     return render(request, 'quienes_somos.html', context=context)
+
+def contacto(request):
+    return render(request, 'contacto.html')
+
+def buscar_juguetes(request):
+    print(request.GET)
+    return render(request, 'buscar_juguetes.html')
+

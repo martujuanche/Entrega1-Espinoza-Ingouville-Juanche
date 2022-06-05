@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from empresa.views import index, listar_sucursales, listar_empleados
+from empresa.views import index, listar_sucursales, listar_empleados, contacto, buscar_juguetes
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,6 +23,8 @@ urlpatterns = [
     path('juguetes/', include('app_juegos.urls')),
     path('', index, name = 'index'),
     path('quienes_somos/', listar_empleados, name = 'listar_empleados'),
+    path('contacto/', contacto, name = 'contacto'),
+    path('buscar_juguetes/', buscar_juguetes, name = 'buscar_juguetes'),
 
 ]
 
