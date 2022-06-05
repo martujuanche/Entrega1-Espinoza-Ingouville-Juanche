@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from app_juegos.models import Sucursal, Empleados
+from app_juegos.models import Sucursal, Empleados, Juguete
 
 def index(request):
     return render(request, 'index.html')
@@ -19,5 +19,8 @@ def contacto(request):
 
 def buscar_juguetes(request):
     print(request.GET)
-    return render(request, 'buscar_juguetes.html')
+    juguetes = Juguete.objects.filter(name__icontains = request.GET['search'])
+    context = {'juguetes':juguetes}
+    return render(request, 'buscar_juguetes.html', context = context)
+
 

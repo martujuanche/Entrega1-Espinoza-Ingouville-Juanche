@@ -3,9 +3,9 @@
 
 {% block content %}
 <h3 style="text-align:center">RESULTADOS DE LA BÚSQUEDA</h3>
-{% for juguete in lista_juguetes %}
+{% for juguete in juguetes %}
 <div class="card mb-3" style="max-width: 240px;">
-  <img src="https://cdn.webshopapp.com/shops/153/files/360689015/300x250x2/tokyo-toys-astro-boy-pvc-open-eyes-vintage-by-tezu.jpg" class="card-img-top" alt="...">
+  <img src="/static/juguete.jpg" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">{{juguete.name}}</h5>
     <p class="card-text">Año: {{juguete.year}} <br> Precio: {{juguete.price}}</p>
