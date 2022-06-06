@@ -3,7 +3,10 @@
 
 {% block content %}
 <h3 style="text-align:center">RESULTADOS DE LA BÚSQUEDA</h3>
+<br>
+
 {% for juguete in juguetes %}
+<div align="center">
 <div class="card mb-3" style="max-width: 240px;">
   <img src="/static/juguete.jpg" class="card-img-top" alt="...">
   <div class="card-body">
@@ -12,5 +15,6 @@
     <a href="#" class="btn btn-primary">Comprar</a>
   </div>
 </div>
+    </div>
     {% endfor %}
 {% endblock %}

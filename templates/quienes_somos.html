@@ -2,16 +2,19 @@
 
 
 {% block content %}
-<h3 style="text-align:center">QUIENES SOMOS</h3>
-<p style="text-align:center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
+<h3 style="text-align:center">Quiénes somos</h3>
+<div class="alert alert-secondary" role="alert">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</div>
 {% for empleado in lista_empleados %}
+<div align="center">
 <div class="card mb-3" style="max-width: 240px;">
   <img src="/static/empleado.jpg" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">{{empleado.nombre}}</h5>
     <p class="card-text">Puesto: {{empleado.puesto}} <br> Mail: {{empleado.email}}</p>
   </div>
+</div>
 </div>
     {% endfor %}
 {% endblock %}
