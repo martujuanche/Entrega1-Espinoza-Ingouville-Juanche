@@ -8,7 +8,7 @@
 {% for juguete in juguetes %}
 <div align="center">
 <div class="card mb-3" style="max-width: 240px;">
-  <img src="/static/juguete.jpg" class="card-img-top" alt="...">
+  <img src="/static/imagenes/{{juguete.image}}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">{{juguete.name}}</h5>
     <p class="card-text">Año: {{juguete.year}} <br> Precio: {{juguete.price}}</p>
