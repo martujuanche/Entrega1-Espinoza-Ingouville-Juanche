@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from app_juegos.models import Juguete
-from app_juegos.forms import Juguete_form
+from app_juegos.models import Juguete, Sucursal, Empleados
+from app_juegos.forms import Juguete_form, Sucursal_form, Empleados_form
+from django.http import HttpResponse
 
 def listar_juguetes(request):
     lista_juguetes = Juguete.objects.all()
@@ -24,4 +25,38 @@ def crear_juguete_view(request):
             )
             context ={'new_product':new_product}
         return render(request, 'crear_juguete.html', context=context)
+
+def crear_sucursal_view(request):
+    if request.method == 'GET':
+        form = Sucursal_form()
+        context = {'form':form}
+        return render(request, 'crear_sucursal.html',context=context )
+    else:
+        form = Sucursal_form(request.POST)
+        if form.is_valid():
+            new_sucursal = Sucursal.objects.create(
+                adress = form.cleaned_data['adress'],
+                phone = form.cleaned_data['phone'],
+                email = form.cleaned_data['email'],
+                image = form.cleaned_data['image'],
+            )
+            context ={'new_sucursal':new_sucursal}
+        return render(request, 'crear_sucursal.html',context=context )
+
+def crear_empleado_view(request):
+    if request.method == 'GET':
+        form = Empleados_form()
+        context = {'form':form}
+        return render(request, 'crear_empleado.html',context=context )
+    else:
+        form = Empleados_form(request.POST)
+        if form.is_valid():
+            new_empleado = Empleados.objects.create(
+                nombre = form.cleaned_data['nombre'],
+                puesto = form.cleaned_data['puesto'],
+                email = form.cleaned_data['email'],
+                image = form.cleaned_data['image'],
+            )
+            context ={'new_empleado':new_empleado}
+        return render(request, 'crear_empleado.html',context=context )
 

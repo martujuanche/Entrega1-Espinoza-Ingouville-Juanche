@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+blah
+{% block titulo %}
+    Contacto
+{% endblock %}
+
+{% block contenido %}
+
+{% if form %}
+
+    <h1>Aca va el contenido de crear empleado</h1>
+    <form action="" method="POST" >
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <input type="submit", value="Enviar!">
+    </form>
+    
+{% elif new_empleado %}
+
+<div class="row g-3">
+    <div class="col">
+      <input type="text" class="nombre" placeholder="nombre" aria-label="nombre">
+    </div>
+    <div class="col">
+      <input type="puesto" class=" puesto" placeholder=" puesto" aria-label=" puesto">
+    </div>
+    <div class="col">
+        <input type="email" class=" email" placeholder=" email" aria-label=" puesto">
+      </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+    <div class="card-body">
+        <p class="card-text">{{new_empleado.image}}</p>
+    </div>
+</div>
+
+{% endif %}
+
+{% endblock %}
