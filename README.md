@@ -7,8 +7,10 @@
    desde '/admin/' y se reflejan en '/juguetes/', '/sucursales/' y '/quienes_somos/' respectivamente. 
 
 3) Un formulario para insertar datos a todas las clases de tu models.
+   Desde la navbar se pueden cargar datos a los tres modelos desde los links:
+   crear juguete, crear sucursal y crear empleado. (Nota: no logramos hacer que cargue imágenes x formulario)
 
-4) Un formulario para buscar algo en la BD.
+5) Un formulario para buscar algo en la BD.
    Se puede probar desde la navbar en '/index/' o cualquier otro url. La función buscar_juguetes que 
    realiza la búsqueda (con el método GET) se encuentra en views.py, dentro de la carpeta 'empresa'.
    Los resultados se reflejan en '/buscar_juguetes/?search=...'
