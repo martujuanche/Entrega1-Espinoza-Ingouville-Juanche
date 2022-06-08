@@ -30,18 +30,17 @@
         <a class="nav-link" href="/quienes_somos/">Quiénes Somos</a>
         <li class="nav-item">
         <a class="nav-link" href="/contacto/">Contacto</a>
-      <li class="nav-item">
-          <a class="nav-link" href="/juguetes/crear-juguete/">Crear Juguete
-          </a>
+
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/juguetes/crear-sucursal/">Crear Sucursal
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Crear
         </a>
-    </li>
-     <li class="nav-item">
-          <a class="nav-link" href="/juguetes/crear-empleado/">Crear Empleado
-          </a>
-      </li>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/juguetes/crear-juguete/">Juguete</a>
+          <a class="dropdown-item" href="/juguetes/crear-sucursal/">Sucursal</a>
+          <a class="dropdown-item" href="/juguetes/crear-empleado/">Empleado/a</a>
+        </div>
     </ul>
 
     <form class="form-inline my-2 my-lg-0" action = "/buscar_juguetes/" method = "GET">
