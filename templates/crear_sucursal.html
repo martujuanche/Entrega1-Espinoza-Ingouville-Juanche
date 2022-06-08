@@ -1,16 +1,41 @@
 {% extends 'base.html' %}
 blah
 {% block titulo %}
-   Contacto
+   
 {% endblock %}
 
 {% block contenido %}
 
+{% if form %}
+    <h1>Aca va el contenido de crear sucursal</h1>
+    <form action="" method="POST" >
+        {% csrf_token %}
+        <table>
+        {{form.as_table}}
+        </table>
+        <input type="submit", value="Enviar!">
+    </form>
 
-<h1>Aca va el contenido de crear sucursal</h1>
-<table>
-    {{form.as_table}}
-</table>
+{% elif new_sucursal %}
 
+    <div class="row g-3">
+        <div class="col">
+        <input type="text" class="address" placeholder="address" aria-label="address">
+        </div>
+    <div class="col">
+        <input type="phone" class=" phone" placeholder=" phone" aria-label=" phone">
+    </div>
+        <div class="col">
+        <input type="email" class=" email" placeholder=" email" aria-label=" puesto">
+         </div>
+  </div>
 
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+    <div class="card-body">
+        <p class="card-text">{{new_sucursal.image}}</p>
+    </div>
+</div>
+
+{% endif %}
 {% endblock %}
