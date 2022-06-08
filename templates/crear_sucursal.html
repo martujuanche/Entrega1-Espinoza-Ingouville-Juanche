@@ -1,41 +1,26 @@
 {% extends 'base.html' %}
-blah
-{% block titulo %}
-   
-{% endblock %}
 
-{% block contenido %}
 
-{% if form %}
-    <h1>Aca va el contenido de crear sucursal</h1>
-    <form action="" method="POST" >
-        {% csrf_token %}
-        <table>
-        {{form.as_table}}
-        </table>
-        <input type="submit", value="Enviar!">
-    </form>
+{% block content %}
+<div class="container">
+    {% if form %}
+<h3 20 style="text-align:center">Crear Sucursal</h3>
+<form method="POST" action="">
+    {% csrf_token %}
+<table>{{form.as_table}}</table>
+   <input type="submit" value="Cargar sucursal">
+</form>
+{% elif new_product %}
 
-{% elif new_sucursal %}
-
-    <div class="row g-3">
-        <div class="col">
-        <input type="text" class="address" placeholder="address" aria-label="address">
-        </div>
-    <div class="col">
-        <input type="phone" class=" phone" placeholder=" phone" aria-label=" phone">
-    </div>
-        <div class="col">
-        <input type="email" class=" email" placeholder=" email" aria-label=" puesto">
-         </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+    <div class="card mb-3" style="max-width: 340px">
+    <img src="/static/imagenes/{{new_sucursal.image}}" class="card-img-top" alt="...">
     <div class="card-body">
-        <p class="card-text">{{new_sucursal.image}}</p>
+      <h5 class="card-title">{{new_sucursal.adress}}</h5>
+      <p class="card-text">Año: {{new_sucursal.phone}} <br> Precio: {{new_sucursal.email}}</p>
+
     </div>
-</div>
 
 {% endif %}
+</div>
+
 {% endblock %}

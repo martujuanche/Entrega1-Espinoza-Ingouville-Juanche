@@ -1,43 +1,26 @@
 {% extends 'base.html' %}
-blah
-{% block titulo %}
-    Contacto
-{% endblock %}
 
-{% block contenido %}
 
-{% if form %}
+{% block content %}
+<div class="container">
+    {% if form %}
+<h3 20 style="text-align:center">Crear Empleado</h3>
+<form method="POST" action="">
+    {% csrf_token %}
+<table>{{form.as_table}}</table>
+   <input type="submit" value="Cargar empleado">
+</form>
+{% elif new_product %}
 
-    <h1>Aca va el contenido de crear empleado</h1>
-    <form action="" method="POST" >
-        {% csrf_token %}
-        <table>
-            {{form.as_table}}
-        </table>
-        <input type="submit", value="Enviar!">
-    </form>
-    
-{% elif new_empleado %}
-
-<div class="row g-3">
-    <div class="col">
-      <input type="text" class="nombre" placeholder="nombre" aria-label="nombre">
-    </div>
-    <div class="col">
-      <input type="puesto" class=" puesto" placeholder=" puesto" aria-label=" puesto">
-    </div>
-    <div class="col">
-        <input type="email" class=" email" placeholder=" email" aria-label=" puesto">
-      </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+    <div class="card mb-3" style="max-width: 340px">
+    <img src="/static/imagenes/{{new_empleado.image}}" class="card-img-top" alt="...">
     <div class="card-body">
-        <p class="card-text">{{new_empleado.image}}</p>
+      <h5 class="card-title">{{new_empleado.nombre}}</h5>
+      <p class="card-text">{{new_empleado.puesto}} <br> {{new_empleado.email}}</p>
+
     </div>
-</div>
 
 {% endif %}
+</div>
 
 {% endblock %}
