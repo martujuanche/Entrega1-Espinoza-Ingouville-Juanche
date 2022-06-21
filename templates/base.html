@@ -33,14 +33,24 @@
 
       </li>
        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Crear
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right:2rem">          Crear
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/juguetes/crear-juguete/">Juguete</a>
           <a class="dropdown-item" href="/juguetes/crear-sucursal/">Sucursal</a>
           <a class="dropdown-item" href="/juguetes/crear-empleado/">Empleado/a</a>
         </div>
+      {% if request.user.is_authenticated %}
+      <li class="nav-item">
+
+      <a class="nav-link" href="/logout">Logout</a>
+      {% else %}
+      <li class="nav-item">
+      <a class="nav-link" href="/login">Login</a>
+      <li class="nav-item">
+      <a class="nav-link" href="/registrarse">Registrarse</a>
+      {% endif %}
+
     </ul>
 
     <form class="form-inline my-2 my-lg-0" action = "/buscar_juguetes/" method = "GET">
@@ -131,6 +141,7 @@
           </p>
           <p>
             <a href="/quienes_somos/" class="text-reset">Quiénes Somos</a>
+          </p>
         </div>
         <!-- Grid column -->
 

@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from app_juegos.models import Sucursal, Empleados, Juguete
 
 def index(request):
@@ -53,5 +53,9 @@ def login_view(request):
         form = AuthenticationForm()
         context = {'form':form}
         return render(request, 'auth/login.html', context = context)
+
+def logout_view(request):
+    logout(request)
+    return redirect('index')
 
 
