@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+<h3 style="text-align:center">Registrarse</h3>
+    <h6>{{errors}}</h6>
+<form method="POST" action="">
+    {% csrf_token %}
+<table >{{form.as_table}}</table>
+   <input type="submit" value="Crear usuario">
+</form>
+
+{% endblock %}
