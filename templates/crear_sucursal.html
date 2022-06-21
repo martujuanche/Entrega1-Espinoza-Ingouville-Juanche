@@ -5,7 +5,7 @@
 <div class="container">
     {% if form %}
 <h3 20 style="text-align:center">Crear Sucursal</h3>
-<form method="POST" action="">
+<form method="POST" action="" enctype="multipart/form-data">
     {% csrf_token %}
 <table>{{form.as_table}}</table>
    <input type="submit" value="Cargar sucursal">
