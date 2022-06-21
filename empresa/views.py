@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from app_juegos.models import Sucursal, Empleados, Juguete
 from empresa.forms import User_registration_form
 
+
 def index(request):
     return render(request, 'index.html')
 

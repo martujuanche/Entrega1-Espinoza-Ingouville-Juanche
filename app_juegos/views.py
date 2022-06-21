@@ -2,13 +2,14 @@ from django.shortcuts import render
 from app_juegos.models import Juguete, Sucursal, Empleados
 from app_juegos.forms import Juguete_form, Sucursal_form, Empleados_form
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
 def listar_juguetes(request):
     lista_juguetes = Juguete.objects.all()
     context = {'lista_juguetes':lista_juguetes}
     return render(request, 'lista_juguetes.html', context=context)
 
-
+@login_required
 def crear_juguete_view(request):
     if request.method == 'GET':
         form = Juguete_form()
@@ -26,6 +27,7 @@ def crear_juguete_view(request):
             context ={'new_product':new_product}
         return render(request, 'crear_juguete.html', context=context)
 
+@login_required
 def crear_sucursal_view(request):
     if request.method == 'GET':
         form = Sucursal_form()
@@ -43,6 +45,7 @@ def crear_sucursal_view(request):
             context ={'new_sucursal':new_sucursal}
         return render(request, 'crear_sucursal.html',context=context )
 
+@login_required
 def crear_empleado_view(request):
     if request.method == 'GET':
         form = Empleados_form()
