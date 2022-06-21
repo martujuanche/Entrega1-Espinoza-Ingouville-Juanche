@@ -29,9 +29,11 @@
         <li class="nav-item">
         <a class="nav-link" href="/quienes_somos/">Quiénes Somos</a>
         <li class="nav-item">
-        <a class="nav-link" href="/contacto/">Contacto</a>
+        <a class="nav-link" href="/contacto/" style="margin-right:2rem">Contacto</a>
 
       </li>
+
+      {% if request.user.is_authenticated %}
        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right:2rem">          Crear
         </a>
@@ -40,13 +42,14 @@
           <a class="dropdown-item" href="/juguetes/crear-sucursal/">Sucursal</a>
           <a class="dropdown-item" href="/juguetes/crear-empleado/">Empleado/a</a>
         </div>
-      {% if request.user.is_authenticated %}
       <li class="nav-item">
-
+      <a class="nav-link" style= "color: #B71C1C">Hola, {{user}}</a>
+      <li class="nav-item">
       <a class="nav-link" href="/logout">Logout</a>
+
       {% else %}
       <li class="nav-item">
-      <a class="nav-link" href="/login">Login</a>
+      <a class="nav-link" href="/login" style = "color: #B71C1C">Login</a>
       <li class="nav-item">
       <a class="nav-link" href="/registrarse">Registrarse</a>
       {% endif %}
