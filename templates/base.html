@@ -33,10 +33,22 @@
        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right:2rem">Crear
         </a>
+      {% if request.user.is_authenticated and request.user.is_superuser %}
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/juguetes/crear-juguete/">Juguete</a>
           <a class="dropdown-item" href="/juguetes/crear-sucursal/">Sucursal</a>
           <a class="dropdown-item" href="/juguetes/crear-empleado/">Empleado/a</a>
+      {% elif request.user.is_authenticated %}
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/juguetes/crear-juguete/">Juguete</a>
+          <a class="dropdown-item" href="/juguetes/crear-sucursal/"><s>Sucursal</s></a>
+          <a class="dropdown-item" href="/juguetes/crear-empleado/"><s>Empleado/a</s></a>
+            {% else %}
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/juguetes/crear-juguete/"><s>Juguete</s></a>
+          <a class="dropdown-item" href="/juguetes/crear-sucursal/"><s>Sucursal</s></a>
+          <a class="dropdown-item" href="/juguetes/crear-empleado/"><s>Empleado/a</s></a>
+              {% endif %}
         </div>
 
 
