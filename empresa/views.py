@@ -83,4 +83,5 @@ def register_view(request):
         context = {'form':form}
         return render(request, 'auth/register.html', context =context)
 
-
+def compra(request):
+    return render(request, 'compra.html')
