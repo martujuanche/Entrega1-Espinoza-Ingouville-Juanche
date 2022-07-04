@@ -3,6 +3,7 @@ from app_juegos.models import Juguete, Sucursal, Empleados
 from app_juegos.forms import Juguete_form, Sucursal_form, Empleados_form
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.views.generic import DetailView
 
 
 def listar_juguetes(request):
@@ -70,3 +71,6 @@ def crear_empleado_view(request):
     else:
         return redirect('login')
 
+class Detail_juguete(DetailView):
+    model = Juguete
+    template_name= 'detail_juguete.html'
