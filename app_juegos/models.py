@@ -4,6 +4,7 @@ class Juguete(models.Model):
     name = models.CharField(max_length=100)
     year = models.DateField()
     price = models.FloatField()
+    is_active = models.BooleanField(default=True)
     image = models.ImageField(null=True, blank=True)
     class Meta:
         verbose_name = 'juguete'
@@ -13,6 +14,7 @@ class Sucursal(models.Model):
     adress = models.CharField(max_length=200)
     phone = models.IntegerField()
     email = models.CharField(max_length=50)
+    is_active = models.BooleanField(default=True)
     image = models.ImageField(null=True, blank=True)
     class Meta:
         verbose_name = 'sucursal'
@@ -23,6 +25,7 @@ class Empleados(models.Model):
     nombre = models.CharField(max_length=50)
     puesto = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
+    is_active = models.BooleanField(default=True)
     image = models.ImageField(null=True, blank=True)
     class Meta:
         verbose_name = 'empleado'
