@@ -2,11 +2,11 @@ from django.contrib import admin
 from app_juegos.models import Juguete, Sucursal, Empleados
 
 @admin.register(Juguete)
-class ProductsAmin(admin.ModelAdmin):
-    list_display = ['name']
+class JugueteAdmin(admin.ModelAdmin):
+    list_display = ['name', 'year', 'price', 'is_active']
 @admin.register(Sucursal)
-class SucursalAmin(admin.ModelAdmin):
-    list_display = ['adress']
+class SucursalAdmin(admin.ModelAdmin):
+    list_display = ['adress', 'phone', 'email', 'is_active']
 @admin.register(Empleados)
-class Empleados(admin.ModelAdmin):
-    list_display = ['nombre']
+class EmpleadosAdmin(admin.ModelAdmin):
+    list_display = ['nombre','puesto','email','is_active']
