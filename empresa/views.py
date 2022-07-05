@@ -16,7 +16,7 @@ def listar_sucursales(request):
 def listar_empleados(request):
     lista_empleados = Empleados.objects.all()
     context = {'lista_empleados':lista_empleados}
-    return render(request, 'quienes_somos.html', context=context)
+    return render(request, 'empleados.html', context=context)
 
 
 def contacto(request):
@@ -85,3 +85,6 @@ def register_view(request):
 
 def compra(request):
     return render(request, 'compra.html')
+
+def quienes_somos(request):
+    return render(request, 'quienes_somos.html')
