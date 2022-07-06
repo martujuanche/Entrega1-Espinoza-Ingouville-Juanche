@@ -88,3 +88,12 @@ def compra(request):
 
 def quienes_somos(request):
     return render(request, 'quienes_somos.html')
+
+def vermas(request):
+    return render(request, 'vermas.html')
+
+def vermasE(request):
+    return render (request,"vermasE.html")
+
+def vermasS(request):
+    return render (request,"vermasS.html")

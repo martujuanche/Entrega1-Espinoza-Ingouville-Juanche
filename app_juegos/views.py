@@ -73,12 +73,12 @@ def crear_empleado_view(request):
 
 class Detail_juguete(DetailView):
     model = Juguete
-    template_name= 'detail_juguete.html'
+    template_name= 'vermas.html'
 
 class Detail_sucursal(DetailView):
     model= Sucursal
-    template_name= 'detail_sucursal.html'
+    template_name= 'vermasS.html'
 
 class Detail_empleados(DetailView):
     model= Empleados
-    template_name= 'detail_empleado.html'
+    template_name= 'vermasE.html'

@@ -6,7 +6,7 @@ urlpatterns = [
     path('crear-juguete/', crear_juguete_view, name = 'create-juguete'),
     path('crear-sucursal/', crear_sucursal_view, name = 'create-sucursal'),
     path('crear-empleado/', crear_empleado_view, name = 'create-empleado'),
-    path('detail-juguete/<int:pk>/', Detail_juguete.as_view(), name = 'detail_juguete'),
-    path('detail-empleado/<int:pk>/', Detail_empleados.as_view(), name = 'detail_empleado'),
-    path('detail-sucursal/<int:pk>/', Detail_sucursal.as_view(), name = 'detail_sucursal'),
+    path('vermas/<int:pk>/', Detail_juguete.as_view(), name = 'vermas'),
+    path('vermasE/<int:pk>/', Detail_empleados.as_view(), name = 'vermasE'),
+    path('vermasS/<int:pk>/', Detail_sucursal.as_view(), name = 'vermasS'),
 ]

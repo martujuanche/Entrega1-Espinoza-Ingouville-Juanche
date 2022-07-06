@@ -16,3 +16,10 @@
    Los resultados se reflejan en '/buscar_juguetes/?search=...'
 
 
+Entrega Final:
+
+Martina Juanche:
+   -acceso visible a la lista de elementos de los modelos, para que los datos en la base de datos estén presentados de manera más agradables.
+   -adición en los datos de los modelos(Juguetes,Empleados y Sucursales) el booleano "is active" 
+   -división del template "Quienes somos" en "Empleados" para tener el modelo por separado, y la creacion de "Quienes somos" para que allí se encuentre exclusivamente la información de "acerca de mi" que habla de la web y del proyecto.
+   -creación de la pantalla de detalles al apretar "Ver Mas"
