@@ -6,6 +6,7 @@ class Juguete(models.Model):
     price = models.FloatField()
     is_active = models.BooleanField(default=True)
     image = models.ImageField(null=True, blank=True)
+    is_active = models.BooleanField(default=True)
     class Meta:
         verbose_name = 'juguete'
         verbose_name_plural = 'juguetes'

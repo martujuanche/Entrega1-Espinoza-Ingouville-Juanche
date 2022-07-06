@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from app_juegos.models import Juguete, Sucursal, Empleados
 from app_juegos.forms import Juguete_form, Sucursal_form, Empleados_form
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-from django.views.generic import DetailView
+from django.views.generic import DetailView,ListView,CreateView
+
+
 
 
 def listar_juguetes(request):
@@ -20,9 +23,25 @@ def detail_juguete(request, pk):
     except:
 
         context = {'error':'El juguete no existe'}
-        return render(request, 'juguete_detail.html',context = context)
+        return render(request, 'juguete.html',context = context)
 
 
+def delete_juguete(request, pk):
+    try:
+        if request.method == "GET":
+            juguete = Juguete.objects.get(id=pk)
+            juguete = {'juguete':juguete}
+        
+        else:
+            juguete = Juguete.objects.get(id=pk)
+            juguete.delete()
+            context = {'message':'Juguete eliminado correctamente'}
+        return render(request, 'delete_juguete.html', context = context)
+
+    except: 
+        context = {'error':'El juguete no existe'}
+        return render(request, 'delete_juguete.html', context = context)
+        
 
 @login_required
 def crear_juguete_view(request):
@@ -84,6 +103,12 @@ def crear_empleado_view(request):
     else:
         return redirect('login')
 
+class listar_juguetes(ListView):
+    model = Juguete
+    template_name= 'juguete.html'
+
+
+
 class Detail_juguete(DetailView):
     model = Juguete
     template_name= 'vermas.html'
@@ -95,3 +120,18 @@ class Detail_sucursal(DetailView):
 class Detail_empleados(DetailView):
     model= Empleados
     template_name= 'vermasE.html'
+
+class Create_Juguete(CreateView):
+    model= Juguete
+    template_name= 'crear_juguete.html'
+    fields = '__all__'
+
+    def get_success_url(self):
+        return reverse('detail_juguete',kwargs={'pk':self.object.pk})
+
+class Delete_juguete(DetailView):
+    model= Juguete
+    template_name= 'delete_juguete.html'
+
+    def get_success_url(self):
+        return reverse('lista_juguetes')
