@@ -1,5 +1,5 @@
 from django.urls import path
-from app_juegos.views import ListView,listar_juguetes, crear_juguete_view, crear_sucursal_view, crear_empleado_view, Detail_juguete, Detail_empleados,Detail_sucursal,detail_juguete, delete_juguete
+from app_juegos.views import ListView,listar_juguetes, crear_juguete_view, crear_sucursal_view, crear_empleado_view, Detail_juguete, Detail_empleados,Detail_sucursal,detail_juguete, delete_juguete, update_juguete
 
 
 urlpatterns = [
@@ -12,4 +12,6 @@ urlpatterns = [
     path('vermasS/<int:pk>/', Detail_sucursal.as_view(), name = 'vermasS'),
     path('detail-juguete/<int:pk>/', detail_juguete, name = 'detail_juguete'),
     path('delete-juguete/<int:pk>/', delete_juguete, name = 'delete_juguete'),
+    path('update-juguete/<int:pk>/', update_juguete.as_view(), name = 'update_juguete'),
+
 ]

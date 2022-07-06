@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+
+Actualizar Juguete
+
+{% block content %}
+
+<h1 style="margin-left:30rem">Editar Producto</h1>
+<div class="d-flex" style="margin-top:5rem; margin-left:7rem">
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{object.name}}</h5>
+            <p class="card-text">{{object.year}}</p>
+            <p class="card-text">{{object.price}}</p>
+            <a href="/juguete/update-juguete/{{object.id}}/" class="btn btn-primary">Editar</a>
+            
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
