@@ -11,6 +11,19 @@ def listar_juguetes(request):
     context = {'lista_juguetes':lista_juguetes}
     return render(request, 'lista_juguetes.html', context=context)
 
+def detail_juguete(request, pk):
+    try:
+        juguete = Juguete.objects.get(id=pk)
+        context = {'juguete':juguete}
+        return render(request, 'juguete_detail.html', context = context)
+
+    except:
+
+        context = {'error':'El juguete no existe'}
+        return render(request, 'juguete_detail.html',context = context)
+
+
+
 @login_required
 def crear_juguete_view(request):
     if request.method == 'GET':
