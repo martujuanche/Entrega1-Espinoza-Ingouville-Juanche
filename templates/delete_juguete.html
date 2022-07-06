@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block titulo %}
+    Borrar juguete
+{% endblock %}
+
+{% block contenido %}
+
+{% if product %}
+    <h3 style="color:red">Estas por eliminar el juguete {{juguete.name}}, estas seguro?</h3>
+<form action="/juguete/delete-juguete/{{juguete.id}}/" method = "POST">
+    {%csrf_token %}
+
+    <button class="btn btn-danger" type="submit">Eliminar</button>
+
+
+
+</form>
+
+{% endif %}
+
+{% endblock %}
